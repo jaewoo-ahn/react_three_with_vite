@@ -1,17 +1,16 @@
-import {Canvas} from "@react-three/fiber";
+import {Routes, Route} from "react-router";
+
 import "./App.css";
+import {BasicBox, Sample} from "./components";
 
 const App = () => {
   return (
-    <>
-      <Canvas>
-        <directionalLight position={[0, 0, 2]} />
-        <mesh position={[1, 0, 0]}>
-          <boxGeometry />
-          <meshStandardMaterial color={"orange"} />
-        </mesh>
-      </Canvas>
-    </>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<BasicBox />} />
+        <Route path="/sample" element={<Sample />} />
+      </Routes>
+    </div>
   );
 };
 
