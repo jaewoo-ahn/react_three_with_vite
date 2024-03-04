@@ -1,28 +1,28 @@
 /* eslint-disable react/no-unknown-property */
-import {Canvas, useFrame} from "@react-three/fiber";
-import PropTypes from "prop-types";
-import {useRef} from "react";
+import {Canvas} from "@react-three/fiber";
 
-const Cube = ({position, color, size}) => {
-  const ref = useRef();
+import {Cube} from "./Cube";
 
-  useFrame((state, delta) => {
-    ref.current.rotation.x += delta;
-    ref.current.rotation.y += delta * 2.0;
-    ref.current.position.z += Math.sin(state.clock.elapsedTime);
-  });
-  return (
-    <mesh position={position} ref={ref}>
-      <boxGeometry args={size} />
-      <meshStandardMaterial color={color} />
-    </mesh>
-  );
-};
-Cube.propTypes = {
-  position: PropTypes.array.isRequired,
-  color: PropTypes.string.isRequired,
-  size: PropTypes.array.isRequired,
-};
+// const Cube = ({position, color, size}) => {
+//   const ref = useRef();
+
+//   useFrame((state, delta) => {
+//     ref.current.rotation.x += delta;
+//     ref.current.rotation.y += delta * 2.0;
+//     ref.current.position.z += Math.sin(state.clock.elapsedTime) * 0.1;
+//   });
+//   return (
+//     <mesh position={position} ref={ref}>
+//       <boxGeometry args={size} />
+//       <meshStandardMaterial color={color} />
+//     </mesh>
+//   );
+// };
+// Cube.propTypes = {
+//   position: PropTypes.array.isRequired,
+//   color: PropTypes.string.isRequired,
+//   size: PropTypes.array.isRequired,
+// };
 
 const BasicBox = () => {
   return (
