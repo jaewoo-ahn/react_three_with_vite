@@ -1,5 +1,4 @@
 // src/components/Nav.jsx
-import {useState} from "react";
 import {Link} from "react-router-dom";
 
 const Nav = () => {
